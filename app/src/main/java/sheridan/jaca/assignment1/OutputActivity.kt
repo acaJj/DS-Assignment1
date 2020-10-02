@@ -20,8 +20,8 @@ class OutputActivity : AppCompatActivity() {
         val txtWinner = binding.txtWinner
         val btnReplay = binding.btnReplay
 
-        txtPlayerChoice.text = player
-        txtComputerChoice.text = computer
+        txtPlayerChoice.text = "Player: $player"
+        txtComputerChoice.text = "Computer: $computer"
 
         val result = determineResult(player,computer)
 
