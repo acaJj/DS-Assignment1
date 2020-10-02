@@ -1,7 +1,7 @@
 package sheridan.jaca.assignment1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import sheridan.jaca.assignment1.databinding.ActivityOutputBinding
 
 class OutputActivity : AppCompatActivity() {
@@ -10,7 +10,7 @@ class OutputActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOutputBinding.inflate(layoutInflater)
-        var rootView = binding.root
+        val rootView = binding.root
         setContentView(rootView)
 
         val player = intent.getStringExtra("playerChoice")
@@ -26,10 +26,12 @@ class OutputActivity : AppCompatActivity() {
         val result = determineResult(player,computer)
 
         txtWinner.text = result
+
+        btnReplay.setOnClickListener { finish() }
     }
 
     private fun determineResult(player: String?, computer:String?): String{
-        var result:String = ""
+        var result = ""
         if(player=="Rock"){
             if (computer=="Rock"){
                 result = "It's a Draw!!!"
